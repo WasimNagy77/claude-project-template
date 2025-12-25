@@ -2,6 +2,41 @@
 
 Specialized AI agents for the agency workflow. Each agent has a specific role and expertise.
 
+**Important:** All agents should follow the [WORKER.md](../WORKER.md) protocol for GitHub integration.
+
+---
+
+## GitHub Integration
+
+Each agent corresponds to a GitHub label for task assignment:
+
+| Agent | GitHub Label | Used For |
+|-------|--------------|----------|
+| strategy | `dept:strategy` | Requirements, planning |
+| design | `dept:design` | UI/UX, visual |
+| content | `dept:content` | Copy, blog posts |
+| dev | `dept:dev` | Implementation |
+| security | `dept:security` | Auth, hardening |
+| qa | `dept:qa` | Testing, bugs |
+| audit | `dept:audit` | Code review |
+| seo | `dept:seo` | Search optimization |
+| analytics | `dept:analytics` | Tracking, metrics |
+| devops | `dept:devops` | CI/CD, deploy |
+| assets | `dept:assets` | Images, media |
+| client | `dept:client` | Communication |
+| docs | `dept:docs` | Documentation |
+
+### Brain → Worker Flow
+
+1. **Brain** creates GitHub issue with `dept:[agent]` label
+2. **Worker** (Claude Code) is spawned
+3. **Worker** reads CLAUDE.md, finds assigned issue
+4. **Worker** executes task following agent specialization
+5. **Worker** creates PR when done
+6. **Brain** reviews and merges
+
+---
+
 ## Agent Categories
 
 ### CORE (Always Active)

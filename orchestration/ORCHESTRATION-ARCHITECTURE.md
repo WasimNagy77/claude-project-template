@@ -1,8 +1,31 @@
 # One Brain, 10 Arms: Claude Orchestration Architecture
 
-**Version:** 1.0.0
+**Version:** 2.0.0
 **Created:** December 23, 2025
-**Status:** Production Ready
+**Updated:** December 25, 2025
+**Status:** God Mode Ready
+
+---
+
+## What's New in v2.0
+
+### GitHub MCP Integration
+- **9 prompts** (5 original + 4 new) for guided workflows
+- **40+ tools** for full GitHub control
+- Brain (Claude Desktop) can now orchestrate directly via GitHub API
+
+### New Prompts Added
+| Prompt | Purpose |
+|--------|---------|
+| `agency-dashboard` | Multi-project status overview |
+| `project-intake` | Onboard new client projects |
+| `worker-delegation` | Create and assign tasks |
+| `daily-standup` | Morning status check |
+
+### New Files
+- `BRAIN.md` - Master instructions for Claude Desktop as Brain
+- `WORKER.md` - Standard instructions for all workers
+- `GOD-MODE-ARCHITECTURE.md` - Complete workflow design
 
 ---
 
