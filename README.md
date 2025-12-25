@@ -35,13 +35,10 @@ A framework for running an AI agency where Claude Desktop orchestrates (Brain), 
 
 ## Quick Start
 
-### For Humans
 1. Clone this repo
-2. Read [SETUP.md](./SETUP.md) for installation
-3. Follow [BRAIN.md](./BRAIN.md) or [WORKER.md](./WORKER.md) based on your role
-
-### For AI
-Read [CLAUDE.md](./CLAUDE.md) - it will direct you based on your environment.
+2. Read [SESSION-LOG.md](./SESSION-LOG.md) to see current state
+3. Read [SETUP.md](./SETUP.md) if setting up on a new machine
+4. Follow [BRAIN.md](./BRAIN.md) (orchestrator) or [WORKER.md](./WORKER.md) (executor) based on your role
 
 ## Features
 
@@ -91,12 +88,12 @@ Each department has a GitHub label (`dept:X`) for task assignment.
 
 ## Environment Capabilities
 
-| Environment | Full | Partial | Capture |
-|-------------|------|---------|---------|
-| Claude Desktop + MCP | All tools | - | - |
-| Claude Code | Git, files | No GitHub API | Files |
-| Claude Mobile | Git, files | No gh CLI | STATUS.md |
-| Claude Web | Read only | - | Chat |
+| Environment | Level | Has | Missing |
+|-------------|-------|-----|---------|
+| Claude Desktop + MCP | Full | All tools, prompts | - |
+| Claude Code | Partial | Git, files, bash | GitHub API (no gh CLI) |
+| Claude Mobile | Partial | Git, files, bash | GitHub API (no gh CLI) |
+| Claude Web | Minimal | Chat only | Everything else |
 
 **Principle:** Never block, always capture.
 

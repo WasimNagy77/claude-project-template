@@ -1,21 +1,12 @@
-# God Mode Framework
+# God Mode Framework - AI Instructions
 
-**AI-Powered Project Orchestration**
-
-## What Is This?
-
-This is the **God Mode framework** - a system for running an AI-powered agency where:
-- **Brain** (Claude Desktop) = Orchestrator, makes decisions
-- **Workers** (Claude Code) = Executors, do the work
-- **GitHub** = Memory, permanent source of truth
+**Note:** This file contains AI-specific instructions. For the main entry point, see [README.md](./README.md).
 
 ## Quick Start
 
-### First Time Here?
-Read [README.md](./README.md) for overview, then [SETUP.md](./SETUP.md) for installation.
-
-### Returning?
-Read [SESSION-LOG.md](./SESSION-LOG.md) to see what was done and what's next.
+1. Read [README.md](./README.md) - the universal entry point
+2. Read [SESSION-LOG.md](./SESSION-LOG.md) - what was done, what's next
+3. Based on your role, read [BRAIN.md](./BRAIN.md) or [WORKER.md](./WORKER.md)
 
 ## Which Role Are You?
 
@@ -67,12 +58,12 @@ These are in `workflows/` folder and also available as MCP prompts:
 
 The framework works everywhere, with different capability levels:
 
-| Environment | Full | Partial | Capture |
-|-------------|------|---------|---------|
-| Claude Desktop + MCP | All workflows, all tools | - | - |
-| Claude Code | Git, files, bash | No GitHub API | Capture in files |
-| Claude Mobile | Git, files | No gh CLI | Capture in STATUS.md |
-| Claude Web | Read-only | - | Capture in chat |
+| Environment | Level | Has | Missing |
+|-------------|-------|-----|---------|
+| Claude Desktop + MCP | Full | All tools, prompts | - |
+| Claude Code | Partial | Git, files, bash | GitHub API |
+| Claude Mobile | Partial | Git, files, bash | GitHub API |
+| Claude Web | Minimal | Chat only | Everything else |
 
 **Principle:** Never block, always capture.
 
