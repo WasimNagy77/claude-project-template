@@ -133,6 +133,16 @@ Possible next steps:
 
 ## Quick Links
 
-- Repo: https://github.com/WasimNagy77/claude-project-template
-- Related: https://github.com/WasimNagy77/agency (test case)
-- Related: https://github.com/WasimNagy77/nail-candy-website (client project)
+- **Framework Repo:** https://github.com/WasimNagy77/claude-project-template
+- **MCP Repo:** https://github.com/WasimNagy77/github-full-mcp (the engine)
+- **Test Case:** https://github.com/WasimNagy77/agency (brainstorming)
+- **Client Project:** https://github.com/WasimNagy77/nail-candy-website
+
+## God Mode = Framework + MCP
+
+| Component | Repo | Purpose |
+|-----------|------|---------|
+| Framework | claude-project-template | Instructions (BRAIN.md, WORKER.md) |
+| MCP | github-full-mcp | Tools + Prompts (40+ tools, 9 prompts) |
+
+Both are needed for full God Mode functionality.
