@@ -4,16 +4,24 @@
 
 **Read these files in order:**
 
-1. **[docs/project-context.md](./docs/project-context.md)** - Project history, decisions, and current status
-2. **[CONTRIBUTING.md](./CONTRIBUTING.md)** - Workflow rules for all changes
-3. **[SECURITY.md](./SECURITY.md)** - Security requirements and checklist
+1. **[SESSION-LOG.md](./SESSION-LOG.md)** - What was done, what's next (START HERE)
+2. **[GOD-MODE-ARCHITECTURE.md](./GOD-MODE-ARCHITECTURE.md)** - Full system design
+3. **[BRAIN.md](./BRAIN.md)** - If you're Claude Desktop (orchestrator)
+4. **[WORKER.md](./WORKER.md)** - If you're Claude Code (executor)
+
+## What This Repo Is
+
+This is the **God Mode framework** for AI-powered workflows:
+- Brain (Claude Desktop) orchestrates
+- Workers (Claude Code) execute
+- GitHub is the permanent memory
 
 ## Working on This Project
 
 ### Every Session
-1. Check `docs/project-context.md` for current status and next steps
-2. Review any open GitHub issues related to your task
-3. Follow the workflow in CONTRIBUTING.md
+1. Read `SESSION-LOG.md` first - know where we left off
+2. Check "What's Next" section
+3. Update SESSION-LOG.md as you work (continuous saving)
 
 ### After Making Changes
 1. Update `docs/project-context.md` with:
