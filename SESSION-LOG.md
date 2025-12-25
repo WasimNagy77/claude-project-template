@@ -89,13 +89,49 @@ Tested Claude on iPhone with agency repo:
 
 ### What's Next
 
-Framework is now **SOLID and COMPLETE**.
+**CRITICAL: Review and fix audit gaps before heavy usage.**
 
-Ready for:
-1. Real work on agency brainstorming
-2. Real work on nail-candy-website
-3. Adding new projects via project-intake workflow
-4. Refinement based on actual usage
+## Deep Audit Findings (December 25, 2025)
+
+A comprehensive audit was performed. User needs to review each gap and decide fixes.
+
+### HIGH PRIORITY (Fix Before Heavy Usage)
+
+1. **STATUS.md vs GitHub Sync** - Can get out of sync, who owns updates?
+2. **MCP vs Workflow Files** - Two sources, which is truth?
+3. **Partial → Full Handoff** - Where do mobile captures go?
+4. **Recovery Procedure** - What if session dies mid-work?
+5. **Conflict Resolution** - Two workers same file/issue?
+
+### MEDIUM PRIORITY (Improve Workflow)
+
+6. No escalation workflow (blocked 3+ days, CI failing)
+7. No notification system (relies on standup)
+8. Worker → User communication gap
+9. PROJECTS.md maintenance rules
+10. Milestone/sprint planning workflow
+
+### LOW PRIORITY (Nice to Have)
+
+11. User role not formally defined
+12. Human-in-the-loop points unclear
+13. Terminology inconsistent
+14. Some doc redundancy
+15. Agent files underutilized
+16. No test procedures
+
+### What's Solid
+
+- Core Brain/Worker/GitHub architecture
+- Continuous saving protocol
+- 9 workflows cover main cases
+- 13 departments with labels
+- Graceful degradation
+- README.md as universal entry point
+
+### Resume Point
+
+User will review each gap one by one, decide which to fix
 
 ---
 
