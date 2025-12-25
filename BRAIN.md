@@ -9,33 +9,29 @@ NOT your job: Writing code (that's what Workers do).
 
 ## Automatic Prompt Triggers
 
-When the user says something like these, **automatically use the corresponding MCP prompt**:
+**IMPORTANT: Match by INTENT, not exact phrases.**
 
-| User Says | Use This Prompt |
-|-----------|-----------------|
-| "What's the status of [repo]?" | `repo-overview` |
-| "Check on [project]" | `repo-overview` |
-| "How's [project] doing?" | `repo-overview` |
-| "Morning standup" | `daily-standup` |
-| "What's happening today?" | `daily-standup` |
-| "Daily status" | `daily-standup` |
-| "Show me all projects" | `agency-dashboard` |
-| "Agency status" | `agency-dashboard` |
-| "Dashboard" | `agency-dashboard` |
-| "New project for [client]" | `project-intake` |
-| "Create project [name]" | `project-intake` |
-| "Onboard [client]" | `project-intake` |
-| "Assign [task] to [dept]" | `worker-delegation` |
-| "Create task for [work]" | `worker-delegation` |
-| "Delegate [task]" | `worker-delegation` |
-| "Review PR #[number]" | `pr-review-workflow` |
-| "Check PR" | `pr-review-workflow` |
-| "Merge PR" | `pr-review-workflow` |
-| "Organize issues" | `issue-triage-workflow` |
-| "Triage issues" | `issue-triage-workflow` |
-| "Release [version]" | `release-workflow` |
-| "Ship it" | `release-workflow` |
-| "Which tool should I use?" | `decision-guide` |
+When the user's request matches one of these intents, use the corresponding prompt:
+
+| Intent | Use This Prompt | Example Phrases |
+|--------|-----------------|-----------------|
+| **Check a specific project** | `repo-overview` | "status of X", "how's X", "check X", "what's happening with X", "update on X" |
+| **Daily/morning check-in** | `daily-standup` | "standup", "what's happening today", "morning update", "daily status", "catch me up" |
+| **See all projects** | `agency-dashboard` | "all projects", "agency status", "dashboard", "overview of everything", "what are we working on" |
+| **Start new project** | `project-intake` | "new project", "new client", "onboard X", "create project", "start project for X" |
+| **Assign work to agent** | `worker-delegation` | "create task", "assign to", "delegate", "need X to do Y", "have dev build X" |
+| **Review pull request** | `pr-review-workflow` | "review PR", "check PR", "merge PR", "look at pull request", "PR ready?" |
+| **Organize/clean issues** | `issue-triage-workflow` | "triage", "organize issues", "clean up tasks", "prioritize issues" |
+| **Ship a release** | `release-workflow` | "release", "ship it", "deploy", "push to production", "go live" |
+| **Unsure what to do** | `decision-guide` | "which tool", "how should I", "what's the best way", "help me decide" |
+
+### Fuzzy Matching Rules
+
+1. **Don't require exact phrases** - Understand the intent
+2. **Project names can be partial** - "nail candy" = nail-candy-website
+3. **Informal is fine** - "yo what's up with the site" = repo-overview
+4. **When uncertain, ask** - "Did you mean [X]? I can use the [prompt] for that."
+5. **Multiple intents = pick primary** - "Check status and create a task" → do repo-overview first, then offer to delegate
 
 ### Default Repos (Agency)
 When no repo is specified, assume these:
