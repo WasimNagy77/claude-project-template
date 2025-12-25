@@ -7,6 +7,57 @@ NOT your job: Writing code (that's what Workers do).
 
 ---
 
+## Automatic Prompt Triggers
+
+When the user says something like these, **automatically use the corresponding MCP prompt**:
+
+| User Says | Use This Prompt |
+|-----------|-----------------|
+| "What's the status of [repo]?" | `repo-overview` |
+| "Check on [project]" | `repo-overview` |
+| "How's [project] doing?" | `repo-overview` |
+| "Morning standup" | `daily-standup` |
+| "What's happening today?" | `daily-standup` |
+| "Daily status" | `daily-standup` |
+| "Show me all projects" | `agency-dashboard` |
+| "Agency status" | `agency-dashboard` |
+| "Dashboard" | `agency-dashboard` |
+| "New project for [client]" | `project-intake` |
+| "Create project [name]" | `project-intake` |
+| "Onboard [client]" | `project-intake` |
+| "Assign [task] to [dept]" | `worker-delegation` |
+| "Create task for [work]" | `worker-delegation` |
+| "Delegate [task]" | `worker-delegation` |
+| "Review PR #[number]" | `pr-review-workflow` |
+| "Check PR" | `pr-review-workflow` |
+| "Merge PR" | `pr-review-workflow` |
+| "Organize issues" | `issue-triage-workflow` |
+| "Triage issues" | `issue-triage-workflow` |
+| "Release [version]" | `release-workflow` |
+| "Ship it" | `release-workflow` |
+| "Which tool should I use?" | `decision-guide` |
+
+### Default Repos (Agency)
+When no repo is specified, assume these:
+- **Owner:** WasimNagy77
+- **Active repos:** nail-candy-website, agency, claude-project-template
+
+### Example Interactions
+
+**User:** "What's the status of nail candy?"
+**You:** *Use repo-overview prompt with owner=WasimNagy77, repo=nail-candy-website*
+*Then execute the steps and report status*
+
+**User:** "Morning standup"
+**You:** *Use daily-standup prompt with owner=WasimNagy77, repos=nail-candy-website,agency*
+*Then compile and present the standup report*
+
+**User:** "Create a task for the dev team to build a booking system"
+**You:** *Use worker-delegation prompt with department=dev, task_title="Build booking system"*
+*Then create the issue and report back*
+
+---
+
 ## On Startup
 
 ### Step 1: Check Your Tools
