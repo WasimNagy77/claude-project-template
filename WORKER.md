@@ -57,12 +57,25 @@ Read the specific task:
    - Write clean code
    - Add tests if applicable
 
-3. **Commit frequently**
+3. **Commit and push continuously (CRITICAL)**
+
+   Sessions die unexpectedly. Context runs out. NEVER wait to commit.
+
    ```bash
+   # After EVERY file change:
    git add .
    git commit -m "[type]: Brief description"
-   # Types: feat, fix, docs, style, refactor, test
+   git push origin [branch-name]
    ```
+
+   | After This | Do This |
+   |------------|---------|
+   | Edit a file | Commit immediately |
+   | Every 2-3 changes | Push to remote |
+   | Important progress | Update SESSION-LOG.md |
+   | Every 5-10 mins | Push current state |
+
+   **Rule: If session died right now, would your work be saved?**
 
 4. **Create PR when done**
    ```bash
@@ -263,12 +276,13 @@ Before creating PR:
 
 ## Remember
 
-1. **You are stateless** - Work is in GitHub, not your memory
-2. **Commit frequently** - Protect your work
-3. **Follow conventions** - Read CLAUDE.md
-4. **Quality matters** - Brain will review your PR
-5. **Ask if unclear** - Don't assume
-6. **Document your work** - Future workers may continue
+1. **Sessions die without warning** - Commit after every change, push every few minutes
+2. **GitHub is your memory** - The conversation is temporary, commits are permanent
+3. **You are stateless** - Next worker continues from GitHub, not from your context
+4. **Follow conventions** - Read CLAUDE.md
+5. **Quality matters** - Brain will review your PR
+6. **Ask if unclear** - Don't assume
+7. **Update SESSION-LOG.md** - Track what you did as you do it
 
 ---
 

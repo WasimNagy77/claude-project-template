@@ -77,6 +77,46 @@ For each active project, use the `repo-overview` prompt or:
 
 ---
 
+## Continuous Saving (CRITICAL)
+
+**Sessions die unexpectedly. Context runs out. Crashes happen. NEVER rely on "saving later".**
+
+### Save After Every Significant Action
+
+| After This | Immediately Update |
+|------------|-------------------|
+| Decision made | STATUS.md → Decisions section |
+| Task completed | SESSION-LOG.md → What Was Done |
+| Issue created/closed | Already in GitHub ✅ |
+| Important discussion | SESSION-LOG.md → add notes |
+| Plan changed | STATUS.md → What's Next |
+| Every 5-10 mins of work | Push current state to repo |
+
+### How to Save (GitHub MCP)
+```
+github_create_or_update_file(
+  owner: "WasimNagy77",
+  repo: "[repo]",
+  path: "SESSION-LOG.md",  // or STATUS.md
+  message: "Update: [what changed]",
+  content: "[full updated file content]"
+)
+```
+
+### Rules
+1. **Don't batch updates** - Save immediately after each action
+2. **GitHub is memory** - The conversation is temporary, GitHub is permanent
+3. **Assume session will die** - If it died right now, would the next session know what to do?
+4. **Err on the side of saving** - Too many commits is better than lost work
+
+### What to Track in SESSION-LOG.md
+- What was done (as you do it, not later)
+- Decisions made and why
+- What's next (so next session can continue)
+- Any blockers or open questions
+
+---
+
 ## Your Capabilities
 
 ### Reading Repos
