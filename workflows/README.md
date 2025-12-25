@@ -1,5 +1,9 @@
 # God Mode Workflows
 
+**Source of Truth:** These workflow files (`workflows/*.md`) are the authoritative source. MCP prompts in github-full-mcp mirror these files but may lag behind.
+
+**If MCP and workflow file differ:** The workflow file is correct. Update MCP to match.
+
 These workflows are the standard procedures for the God Mode framework. They work identically whether you're:
 - Using Claude Desktop with MCP (prompts auto-triggered)
 - Using Claude Code in terminal (follow manually)
@@ -18,6 +22,8 @@ These workflows are the standard procedures for the God Mode framework. They wor
 | [release](./release-workflow.md) | Create a new release | "let's release X" |
 | [project-intake](./project-intake.md) | Onboard new client project | "new project" |
 | [worker-delegation](./worker-delegation.md) | Create and assign a task | "create task for dev" |
+| [escalation](./escalation.md) | Handle blocked or stalled work | "issue is blocked" |
+| [sprint-planning](./sprint-planning.md) | Plan weekly/milestone work | "plan the sprint" |
 
 ## How to Use
 

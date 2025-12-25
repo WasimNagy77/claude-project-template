@@ -259,11 +259,41 @@ Before creating PR:
 - Request review on PR
 - Flag blockers immediately
 
+### With User (via GitHub + SESSION-LOG)
+
+**Direct communication with User is limited.** Workers primarily communicate through:
+
+1. **Issue Comments** - User sees these in GitHub
+2. **PR Descriptions** - Explain what was done
+3. **SESSION-LOG.md** - User can read this anytime
+4. **Commit Messages** - Clear history of changes
+
+**When User Attention Needed:**
+1. Add `needs:decision` label to issue
+2. Comment with specific question
+3. Note in SESSION-LOG.md: "Waiting for user decision on #X"
+
+**User Communication Template:**
+```markdown
+@WasimNagy77 Decision needed:
+
+**Context:** [what you're working on]
+**Question:** [specific question]
+**Options:**
+1. [Option A] - [pros/cons]
+2. [Option B] - [pros/cons]
+
+**My recommendation:** [if you have one]
+
+Waiting for your input before proceeding.
+```
+
 ### What to Escalate
 - Unclear requirements → Ask in issue comment
 - Architecture decisions → Flag for Brain
 - Scope changes → Discuss before implementing
 - Blockers → Update issue, add blocked label
+- User decision needed → Use `needs:decision` label
 
 ### What NOT to Do
 - ❌ Make strategic decisions without Brain
@@ -271,6 +301,7 @@ Before creating PR:
 - ❌ Ignore acceptance criteria
 - ❌ Push directly to main
 - ❌ Leave work uncommitted
+- ❌ Wait silently when blocked (always communicate)
 
 ---
 

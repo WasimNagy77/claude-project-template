@@ -27,16 +27,37 @@ You can still help! See [Graceful Degradation](#graceful-degradation) below.
 
 ## Key Files
 
+### Role Instructions
+| File | Purpose |
+|------|---------|
+| [BRAIN.md](./BRAIN.md) | Instructions for orchestrator |
+| [WORKER.md](./WORKER.md) | Instructions for workers |
+| [USER.md](./USER.md) | Human operator role definition |
+
+### Project Management
 | File | Purpose |
 |------|---------|
 | [README.md](./README.md) | Project overview (human entry point) |
 | [CLAUDE.md](./CLAUDE.md) | This file (AI entry point) |
 | [SESSION-LOG.md](./SESSION-LOG.md) | Session history and continuity |
-| [BRAIN.md](./BRAIN.md) | Instructions for orchestrator |
-| [WORKER.md](./WORKER.md) | Instructions for workers |
 | [PROJECTS.md](./PROJECTS.md) | Active projects registry |
 | [SETUP.md](./SETUP.md) | Installation guide |
-| [workflows/](./workflows/) | All 9 workflow guides |
+
+### Protocols
+| File | Purpose |
+|------|---------|
+| [SYNC-PROTOCOL.md](./SYNC-PROTOCOL.md) | Source of truth rules |
+| [HANDOFF-PROTOCOL.md](./HANDOFF-PROTOCOL.md) | Environment transitions |
+| [RECOVERY.md](./RECOVERY.md) | Session death recovery |
+| [CONFLICT-RESOLUTION.md](./CONFLICT-RESOLUTION.md) | Multi-worker conflicts |
+| [NOTIFICATIONS.md](./NOTIFICATIONS.md) | Communication system |
+
+### Reference
+| File | Purpose |
+|------|---------|
+| [GLOSSARY.md](./GLOSSARY.md) | Standard terminology |
+| [TESTING.md](./TESTING.md) | Framework testing procedures |
+| [workflows/](./workflows/) | All 11 workflow guides |
 
 ## Workflows
 
@@ -53,6 +74,8 @@ These are in `workflows/` folder and also available as MCP prompts:
 | [issue-triage](./workflows/issue-triage-workflow.md) | "organize issues" | Clean up issues |
 | [release](./workflows/release-workflow.md) | "create release" | Ship a version |
 | [decision-guide](./workflows/decision-guide.md) | "which tool" | Tool selection |
+| [escalation](./workflows/escalation.md) | "blocked" | Handle blockers |
+| [sprint-planning](./workflows/sprint-planning.md) | "plan sprint" | Plan work periods |
 
 ## Graceful Degradation
 
