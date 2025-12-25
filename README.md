@@ -1,100 +1,126 @@
-# Claude Project Template
+# God Mode Framework
 
-A comprehensive template repository with AI assistant support, agency workflow, and Claude Code integrations.
+**AI-Powered Project Orchestration with Claude**
 
-## Features
+A framework for running an AI agency where Claude Desktop orchestrates (Brain), Claude Code executes (Workers), and GitHub serves as permanent memory.
 
-- **AI-Ready Documentation** - Pre-configured for Claude Code and AI assistants
-- **13 Agency Subagents** - Specialized agents for strategy, design, dev, security, QA, and more
-- **Framework Scripts** - Project orchestration and intake automation
-- **Session Continuity** - Handoff system for multi-session projects
-- **Chrome Integration** - Browser automation and debugging
-- **Plugin System** - Extensible with official and custom plugins
-- **Security First** - Security checklist and guidelines included
+## The Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      GOD MODE                                │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│   ┌──────────────┐                                          │
+│   │    BRAIN     │  Claude Desktop + MCP                    │
+│   │  (Orchestrator)  Decides what to do                     │
+│   └──────┬───────┘                                          │
+│          │                                                   │
+│          │ delegates via GitHub Issues                       │
+│          │                                                   │
+│   ┌──────▼───────┐                                          │
+│   │   WORKERS    │  Claude Code instances                   │
+│   │  (Executors) │  Do the actual work                      │
+│   └──────┬───────┘                                          │
+│          │                                                   │
+│          │ reads/writes                                      │
+│          │                                                   │
+│   ┌──────▼───────┐                                          │
+│   │    GITHUB    │  Issues, PRs, Files                      │
+│   │   (Memory)   │  Source of Truth                         │
+│   └──────────────┘                                          │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ## Quick Start
 
-1. Click "Use this template" on GitHub
-2. Clone your new repository
-3. Copy agents to your project:
-   ```bash
-   cp -r agents/ /path/to/your-project/.claude/agents/
-   ```
-4. Update placeholder values in `docs/project-context.md`
-5. Start building!
+### For Humans
+1. Clone this repo
+2. Read [SETUP.md](./SETUP.md) for installation
+3. Follow [BRAIN.md](./BRAIN.md) or [WORKER.md](./WORKER.md) based on your role
 
-## Directory Structure
+### For AI
+Read [CLAUDE.md](./CLAUDE.md) - it will direct you based on your environment.
 
-```
-claude-project-template/
-├── agents/                 # 13 specialized subagents
-│   ├── strategy.md        # Project scoping, architecture
-│   ├── design.md          # UI/UX, accessibility
-│   ├── content.md         # Copywriting, brand voice
-│   ├── dev.md             # Implementation, debugging
-│   ├── security.md        # Vulnerability assessment
-│   ├── qa.md              # Testing, quality assurance
-│   ├── audit.md           # Code audits, tech debt
-│   ├── seo.md             # SEO optimization
-│   ├── analytics.md       # Tracking, data analysis
-│   ├── devops.md          # CI/CD, deployment
-│   ├── assets.md          # Asset management
-│   ├── client.md          # Client communications
-│   └── docs.md            # Documentation
-├── framework/              # Automation scripts
-│   ├── orchestrator.sh    # Agency department orchestration
-│   └── project-intake.sh  # Project intake automation
-├── sessions/               # Session handoff files
-├── docs/
-│   ├── project-context.md # Project memory
-│   ├── chrome-integration.md
-│   └── plugins-guide.md
-├── CLAUDE.md              # AI instructions
-├── CONTRIBUTING.md        # Workflow rules
-├── SECURITY.md           # Security checklist
-└── CHANGELOG.md          # Version history
-```
+## Features
 
-## Agency Subagents
+- **9 Workflow Prompts** - Guided procedures for common tasks
+- **13 Department Agents** - Specialized roles (dev, design, security, etc.)
+- **Graceful Degradation** - Works everywhere (desktop, terminal, mobile)
+- **Continuous Saving** - Never lose progress
+- **GitHub as Memory** - Conversations are temporary, commits are permanent
 
-13 specialized agents organized by department:
+## Key Files
 
-| Category | Agents |
-|----------|--------|
-| **CORE** | strategy, design, content, dev, security |
+| File | Purpose |
+|------|---------|
+| [CLAUDE.md](./CLAUDE.md) | AI entry point |
+| [SESSION-LOG.md](./SESSION-LOG.md) | What was done, what's next |
+| [BRAIN.md](./BRAIN.md) | Instructions for orchestrator |
+| [WORKER.md](./WORKER.md) | Instructions for executors |
+| [PROJECTS.md](./PROJECTS.md) | Active projects registry |
+| [SETUP.md](./SETUP.md) | Installation guide |
+| [workflows/](./workflows/) | All 9 workflow guides |
+| [agents/](./agents/) | 13 department definitions |
+
+## Workflows
+
+| Workflow | Trigger | Purpose |
+|----------|---------|---------|
+| repo-overview | "status of X" | Check a project |
+| daily-standup | "catch me up" | Morning check-in |
+| agency-dashboard | "all projects" | Multi-project view |
+| worker-delegation | "create task" | Assign work |
+| project-intake | "new project" | Onboard client |
+| pr-review | "review PR" | Code review |
+| issue-triage | "organize issues" | Clean up issues |
+| release | "create release" | Ship a version |
+| decision-guide | "which tool" | Tool selection |
+
+## The 13 Departments
+
+| Category | Departments |
+|----------|-------------|
+| **Core** | strategy, design, content, dev, security |
 | **Quality** | qa, audit |
 | **Specialist** | seo, analytics, devops |
 | **Support** | assets, client, docs |
 
-See [agents/README.md](agents/README.md) for details.
+Each department has a GitHub label (`dept:X`) for task assignment.
 
-## Claude Code Features
+## Environment Capabilities
 
-### Chrome Integration
-Browser automation for debugging, form filling, and testing.
-See [docs/chrome-integration.md](docs/chrome-integration.md)
+| Environment | Full | Partial | Capture |
+|-------------|------|---------|---------|
+| Claude Desktop + MCP | All tools | - | - |
+| Claude Code | Git, files | No GitHub API | Files |
+| Claude Mobile | Git, files | No gh CLI | STATUS.md |
+| Claude Web | Read only | - | Chat |
 
-### Plugins
-Official plugins for code review, security, and workflow automation.
-See [docs/plugins-guide.md](docs/plugins-guide.md)
+**Principle:** Never block, always capture.
 
-### Session Continuity
-Handoff files in `sessions/` enable seamless multi-session projects.
+## Related Repos
 
-## Documentation
-
-| File | Purpose |
+| Repo | Purpose |
 |------|---------|
-| `CLAUDE.md` | Instructions for AI assistants |
-| `docs/project-context.md` | Project memory and history |
-| `CONTRIBUTING.md` | Workflow for all contributors |
-| `CHANGELOG.md` | Track all changes |
-| `SECURITY.md` | Security policy and checklist |
+| [github-full-mcp](https://github.com/WasimNagy77/github-full-mcp) | The MCP engine (40+ tools, 9 prompts) |
+| [agency](https://github.com/WasimNagy77/agency) | Brainstorming project |
+| [nail-candy-website](https://github.com/WasimNagy77/nail-candy-website) | Client project example |
 
-## GitHub Integration
+## Installation
 
-- `.github/pull_request_template.md` - PR checklist
-- `.github/dependabot.yml` - Weekly security updates
+See [SETUP.md](./SETUP.md) for complete instructions.
+
+Quick version:
+```bash
+# Clone the framework
+git clone https://github.com/WasimNagy77/claude-project-template.git
+
+# (Optional) Install MCP for Claude Desktop
+git clone https://github.com/WasimNagy77/github-full-mcp.git
+cd github-full-mcp && npm install && npm run build
+```
 
 ## License
 

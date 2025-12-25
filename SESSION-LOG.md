@@ -7,82 +7,115 @@ This file tracks all work sessions on the God Mode framework.
 ## Current Session
 
 **Date:** December 25, 2025
-**Started:** After context reset (~01:00 AM)
+**Started:** Continued from previous session (context reset recovery)
 **Environment:** Claude Code (Terminal)
 **Primary Repo:** claude-project-template
-**Main Task:** Build and validate God Mode workflow framework
+**Main Task:** Framework improvements for graceful degradation
 
 ### What This Session Built
 
-The "God Mode" AI agency workflow:
-- **Claude Desktop** = Brain (orchestrator)
-- **Claude Code** = Workers (executors)
-- **GitHub** = Memory (source of truth)
+Completed framework improvements to close identified gaps:
 
-### Files Created/Modified This Session
+1. **workflows/ folder** - All 9 prompts as standalone markdown
+2. **PROJECTS.md** - Active projects registry
+3. **SETUP.md** - New machine onboarding guide
+4. **README.md (MCP)** - Installation guide for github-full-mcp
+5. **README.md (Framework)** - Updated with God Mode architecture
+6. **CLAUDE.md** - Unified as smart entry point
 
-| File | Action | Purpose |
-|------|--------|---------|
-| `BRAIN.md` | Major updates | Instructions for Claude Desktop as orchestrator |
-| `WORKER.md` | Major updates | Instructions for Claude Code workers |
-| `GOD-MODE-ARCHITECTURE.md` | Created earlier | Full system design document |
-| `agents/README.md` | Updated | Added GitHub label integration |
+### Files Created This Session
 
-### Specific Changes Made
+| File | Purpose |
+|------|---------|
+| `workflows/README.md` | Workflows overview |
+| `workflows/decision-guide.md` | Tool selection guide |
+| `workflows/repo-overview.md` | Project status workflow |
+| `workflows/daily-standup.md` | Morning check workflow |
+| `workflows/agency-dashboard.md` | Multi-project view |
+| `workflows/pr-review-workflow.md` | PR review workflow |
+| `workflows/issue-triage-workflow.md` | Issue organization |
+| `workflows/release-workflow.md` | Release creation |
+| `workflows/project-intake.md` | New project onboarding |
+| `workflows/worker-delegation.md` | Task assignment |
+| `PROJECTS.md` | Active projects registry |
+| `SETUP.md` | Installation guide |
 
-1. **Intent-based prompt triggers** (BRAIN.md)
-   - Changed from exact phrase matching to intent matching
-   - Added fuzzy matching rules
-   - "yo what's up with the site" now works
+### Files Modified This Session
 
-2. **Department labels requirement** (BRAIN.md)
-   - Added CRITICAL note to always use `dept:X` labels
-   - Listed all 13 department labels
-   - Prevents generic labels like "enhancement"
+| File | Changes |
+|------|---------|
+| `README.md` | Updated with God Mode architecture |
+| `CLAUDE.md` | Unified as role-based entry point |
+| MCP `README.md` | Created installation guide |
 
-3. **Continuous saving protocol** (BRAIN.md + WORKER.md)
-   - Save after every action, not at session end
-   - "If session died now, would next session know what to do?"
-   - Commit after every file change
-   - Push every 2-3 changes
+### Mobile Testing Results
 
-4. **Tested all 7 God Mode triggers** (in Claude Desktop)
-   - repo-overview: "status of nail candy" ✅
-   - daily-standup: "catch me up" ✅
-   - worker-delegation: "create task for dev..." ✅
-   - agency-dashboard: "what are we working on" ✅
-   - pr-review: "any PRs to review" ✅
-   - issue-triage: "organize the issues" ✅
-   - decision-guide: "how should I handle..." ✅
+Tested Claude on iPhone with agency repo:
 
-### Side Task
+**CAN do:**
+- Read files
+- Edit files
+- Git commit
+- Git push
+- Bash commands
+- Search
+- Web
 
-Created `agency` repo as test case for God Mode workflow:
-- Brainstorm folders for Wasim's agency idea
-- SESSION-LOG.md tracking there too
-- Validated the framework works
+**CANNOT do:**
+- GitHub API operations (no `gh` CLI)
+- Create issues
+- Review PRs
+- Manage project boards
+
+### Gaps Closed
+
+1. **Workflow accessibility** - Now in `workflows/` folder, not locked in MCP
+2. **Project registry** - PROJECTS.md instead of hardcoded repos
+3. **New machine onboarding** - SETUP.md with full instructions
+4. **MCP documentation** - README.md in github-full-mcp
+5. **Universal entry point** - README.md for humans, CLAUDE.md for AI
+6. **Graceful degradation** - Documented capability levels by environment
 
 ### What's Complete
 
-- [x] BRAIN.md - Full orchestrator instructions
-- [x] WORKER.md - Full worker protocol
-- [x] Intent-based triggers - Working
-- [x] Continuous saving protocol - Documented
-- [x] All 7 triggers tested - All working
-- [x] Department labels - Required
+- [x] All 9 workflows as markdown files
+- [x] PROJECTS.md registry
+- [x] SETUP.md onboarding guide
+- [x] MCP README.md
+- [x] Framework README.md
+- [x] CLAUDE.md as smart entry point
+- [x] Mobile capability testing
+- [x] Test branch cleanup
 
 ### What's Next
 
-God Mode framework is **COMPLETE and VALIDATED**.
+Framework is now **SOLID and COMPLETE**.
 
-Possible next steps:
-1. Use it for real work (agency brainstorming, nail candy tasks)
-2. Add more MCP prompts if needed
-3. Refine based on usage
+Ready for:
+1. Real work on agency brainstorming
+2. Real work on nail-candy-website
+3. Adding new projects via project-intake workflow
+4. Refinement based on actual usage
 
 ---
 
 ## Session History
+
+### December 25, 2025 - Earlier Session - God Mode Testing & Validation
+
+**What Was Done:**
+1. Tested all 7 God Mode triggers in Claude Desktop
+2. Added intent-based matching (not exact phrases)
+3. Added continuous saving protocol
+4. Added department labels requirement
+5. Added milestone support to MCP
+6. Created github-full-mcp repo on GitHub
+7. Tested mobile Claude capabilities
+
+**Key Decisions:**
+- "Never block, always capture" principle
+- Graceful degradation across environments
+- Workflows mirrored in both MCP and repo
 
 ### December 24-25, 2025 - God Mode Architecture Design
 
@@ -126,8 +159,8 @@ Possible next steps:
 ### Key Files to Read
 - `BRAIN.md` - How to orchestrate
 - `WORKER.md` - How to execute
-- `GOD-MODE-ARCHITECTURE.md` - Full system design
-- `agents/README.md` - The 13 departments
+- `workflows/` - All 9 workflow guides
+- `PROJECTS.md` - Active projects
 
 ---
 
@@ -142,7 +175,8 @@ Possible next steps:
 
 | Component | Repo | Purpose |
 |-----------|------|---------|
-| Framework | claude-project-template | Instructions (BRAIN.md, WORKER.md) |
+| Framework | claude-project-template | Instructions (BRAIN.md, WORKER.md, workflows/) |
 | MCP | github-full-mcp | Tools + Prompts (40+ tools, 9 prompts) |
 
-Both are needed for full God Mode functionality.
+Both together = Full God Mode.
+Framework alone = Manual God Mode (still works!).
