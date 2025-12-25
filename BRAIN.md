@@ -140,6 +140,13 @@ Use these for guided workflows:
 
 ### Creating a Task for Workers
 
+**CRITICAL: Always use department labels for worker assignment:**
+- `dept:strategy`, `dept:design`, `dept:content`, `dept:dev`, `dept:security`
+- `dept:qa`, `dept:audit`, `dept:seo`, `dept:analytics`, `dept:devops`
+- `dept:assets`, `dept:client`, `dept:docs`
+
+Never use generic labels like `enhancement` or `bug` - use `dept:X` so workers can find their tasks.
+
 1. **Create GitHub Issue:**
 ```
 github_create_issue(
